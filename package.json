@@ -3,14 +3,13 @@
   "version": "1.0.1",
   "description": "Web development extend",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "parcel-bundler": "^1.12.4",
-    "popper.js": "^1.16.0",
-    "sass": "^1.23.7",
-    "bootstrap": "^4.4.1"
+    "sass": "^1.23.7"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
