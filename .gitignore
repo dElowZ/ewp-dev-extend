@@ -4,6 +4,7 @@
 /assets/sass/
 /assets/index.js
 /dist
+package-lock.json
 /node_modules
 /partials/
 .git

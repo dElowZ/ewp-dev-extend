@@ -16,7 +16,7 @@ npm install ewp-dev-extend
 ## Usage
 
 ```javascript
-import EwpDevExtend from 'ewp-dev-extend/assets/ewp-dev-extend.js'
+import EwpDevExtend from 'ewp-dev-extend/assets/js/ewp-dev-extend-core.js'
 
 // Call the script
 
