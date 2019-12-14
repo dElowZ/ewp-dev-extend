@@ -1,4 +1,4 @@
-# Developer Helper Scripts
+# Ewp Dev Extend
 
 This script will help the development, by making it much more easier.
 
@@ -8,16 +8,16 @@ The current version includes:
 
 ## Installation
 
-npm install developer-helper-scripts
+npm install ewp-dev-extend
 
 ## Usage
 
 ```javascript
-import DevHelper from 'developer-helper-scripts'
+import EwpDevExtend from 'ewp-dev-extend'
 
 // Call the script
 
-new DevHelper()
+new EwpDevExtend()
 
 ```
 ## Options
