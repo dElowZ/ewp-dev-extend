@@ -1,5 +1,6 @@
 export default class EwpDevExtend {
   constructor (ewpHelper) {
+    // Header
     this.enableHeader = ewpHelper.enableHeader || false
     this.headerSelector = ewpHelper.headerSelector || false
     this.headerScrolledClass = ewpHelper.headerScrolledClass || false
@@ -7,8 +8,10 @@ export default class EwpDevExtend {
     this.hideHeaderOnScroll = ewpHelper.hideHeaderOnScroll || false
     this.hideHeaderAfter = ewpHelper.hideHeaderAfter || false
     this.hideHeaderBreakpoint = ewpHelper.hideHeaderBreakpoint
+    // Footer
     this.enableFooter = ewpHelper.enableFooter || false
     this.footerSelector = ewpHelper.footerSelector || false
+    // Other options
     this.run()
   }
   run () {
@@ -49,7 +52,6 @@ export default class EwpDevExtend {
         })
       }
     }
-
     // Footer
 
     if (this.enableFooter) {
@@ -63,9 +65,11 @@ export default class EwpDevExtend {
       let html = document.querySelector('html')
       let body = document.body
       html.style.height = 100 + '%'
-      body.style.height = 100 + '%'
+      body.style.minHeight = 100 + '%'
       body.style.position = 'relative'
     }
+
+    // Others
   }
 
   // helper functions ------------
@@ -78,17 +82,15 @@ export default class EwpDevExtend {
       element.addEventListener(events[i], listener, false)
     }
   }
-
   // Get footer height dynamically
 
   getFooterHeight (element) {
     if (!element) {
       return
     }
-    element.style.position = 'absolute'
-    element.style.left = 0
-    element.style.bottom = 0
-    element.style.width = 100 + '%'
+    element.setAttribute(
+      'style', 'position:absolute;left:0;bottom:0;width:100%;'
+    )
     let elementHeight = element.offsetHeight
     document.body.style.paddingBottom = elementHeight + 'px'
     this.addListenerMulti(window, 'resize scroll', () => {
@@ -96,18 +98,17 @@ export default class EwpDevExtend {
       document.body.style.paddingBottom = elementHeight + 'px'
     })
   }
-
   // Style header for fixed position
 
   styleHeader (element) {
     if (!element) {
       return
     }
-    element.style.position = 'fixed'
-    element.style.width = 100 + '%'
-    element.style.top = 0
-    element.style.zIndex = 100
-    element.style.transition = 'all .3s'
+    let body = document.body
+    body.style.overflowX = 'hidden'
+    element.setAttribute(
+      'style', 'position:fixed;width:100%;top:0;left:0;z-index:100;transition:all .3s;'
+    )
   }
   // Get header height dynamically
 
@@ -115,7 +116,6 @@ export default class EwpDevExtend {
     if (!element) {
       return
     }
-
     let elementHeight = element.offsetHeight
     document.body.style.paddingTop = elementHeight + 'px'
     this.addListenerMulti(window, 'resize scroll', () => {
@@ -128,19 +128,14 @@ export default class EwpDevExtend {
   hideHeader (element, hideHeaderAfter) {
     let prevScrollpos = window.pageYOffset
     let height = element.offsetHeight
+    let hideAfterPx = ''
+    if (hideHeaderAfter) {
+      hideAfterPx = hideHeaderAfter
+    } else {
+      hideAfterPx = 0
+    }
     window.addEventListener('scroll', () => {
-      if (hideHeaderAfter) {
-        if (window.pageYOffset > hideHeaderAfter) {
-          height = element.offsetHeight
-          let currentScrollPos = window.pageYOffset
-          if (prevScrollpos > currentScrollPos) {
-            element.style.top = '0'
-          } else {
-            element.style.top = '-' + height + 'px'
-          }
-          prevScrollpos = currentScrollPos
-        }
-      } else {
+      if (window.pageYOffset > hideAfterPx) {
         height = element.offsetHeight
         let currentScrollPos = window.pageYOffset
         if (prevScrollpos > currentScrollPos) {
