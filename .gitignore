@@ -1,0 +1,10 @@
+/.cache
+/assets/js/app.js
+/assets/js/calc.js
+/assets/sass/
+/assets/index.js
+/dist
+/node_modules
+/partials/
+.git
+index.php

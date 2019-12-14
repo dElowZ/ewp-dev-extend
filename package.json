@@ -1,0 +1,34 @@
+{
+  "name": "development-helper-scripts",
+  "version": "1.0.0",
+  "description": "This script will help the development, by making it much more easier.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node ./node_modules/parcel-bundler/bin/cli.js ./assets/index.js --public-url ./",
+    "build": "node ./node_modules/parcel-bundler/bin/cli.js build ./assets/index.js --public-url ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dElowZ/Dev-Helper.git"
+  },
+  "author": "Szabó Bence",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dElowZ/Dev-Helper/issues"
+  },
+  "homepage": "https://github.com/dElowZ/Dev-Helper#readme",
+  "devDependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "parcel-bundler": "^1.12.4",
+    "popper.js": "^1.16.0",
+    "sass": "^1.23.7"
+  },
+  "dependencies": {},
+  "keywords": [
+    "npm",
+    "vanillajs"
+  ]
+}
