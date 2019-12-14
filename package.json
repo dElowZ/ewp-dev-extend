@@ -1,6 +1,6 @@
 {
   "name": "ewp-dev-extend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web development extend",
   "main": "index.js",
   "dependencies": {
