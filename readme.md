@@ -25,16 +25,18 @@ new EwpDevExtend()
 ### Header options
 Argument | Options | Description
 --- | --- | ---
-**enableHeader** | `true, false` | *Enables or disables the fixed header. Default is true*
-**headerSelector** | `string` | *You can add custom selector. Default is 'header' tag*
+**enableHeader** | `bool` | *Enables or disables the fixed header. Default is false*
+**headerSelector** | `string` | *You can add custom selector. Default is the 'header' tag*
 **addClassAfterScrollPos** | `int` | *Specify the scroll position, where the header will get a new class. Also enables this function*
 **headerScrolledClass** | `string` | *If addClassAfterScrollPos is enabled, custom class can be added. Default is header-scrolled*
+**hideHeaderOnScroll** | `bool` | *If true, header will hide on scrolling down.*
+**hideHeaderAfter** | `int` | *Specify the scroll position where the header will hide. On if 'hideHeaderOnScroll is enabled'. Default is 0*
 
 ### Footer options
 Argument | Options | Description
 --- | --- | ---
-**enableFooter** | `true, false` | *Enables or disables the dynamic footer. Default is true*
-**footerSelector** | `string` | *You can add custom selector here. Default is footer tag*
+**enableFooter** | `true, false` | *Enables or disables the dynamic footer. Default is false*
+**footerSelector** | `string` | *You can add custom selector here. Default is the footer tag*
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
