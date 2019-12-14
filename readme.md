@@ -4,7 +4,10 @@ This script will help the development, by making it much more easier.
 
 The current version includes:
 - Create fix position header with only plenty of code.
+- Option to hide header after specified scroll position
+- Option to add specified class after specific scroll position
 - Create dynamic footer position, making it appear always at the bottom of the page.
+
 
 ## Installation
 
@@ -13,7 +16,7 @@ npm install ewp-dev-extend
 ## Usage
 
 ```javascript
-import EwpDevExtend from 'ewp-dev-extend'
+import EwpDevExtend from 'ewp-dev-extend/assets/ewp-dev-extend.js'
 
 // Call the script
 
@@ -35,7 +38,7 @@ Argument | Options | Description
 ### Footer options
 Argument | Options | Description
 --- | --- | ---
-**enableFooter** | `true, false` | *Enables or disables the dynamic footer. Default is false*
+**enableFooter** | `bool` | *Enables or disables the dynamic footer. Default is false*
 **footerSelector** | `string` | *You can add custom selector here. Default is the footer tag*
 
 ## License

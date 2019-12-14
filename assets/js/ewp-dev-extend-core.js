@@ -1,13 +1,14 @@
 export default class EwpDevExtend {
-  constructor (helperOptions) {
-    this.enableHeader = helperOptions.enableHeader || false
-    this.enableFooter = helperOptions.enableFooter || false
-    this.footerSelector = helperOptions.footerSelector || false
-    this.headerSelector = helperOptions.headerSelector || false
-    this.headerScrolledClass = helperOptions.headerScrolledClass || false
-    this.addClassAfterScrollPos = helperOptions.addClassAfterScrollPos || false
-    this.hideHeaderOnScroll = helperOptions.hideHeaderOnScroll || false
-    this.hideHeaderAfter = helperOptions.hideHeaderAfter || false
+  constructor (ewpHelper) {
+    this.enableHeader = ewpHelper.enableHeader || false
+    this.headerSelector = ewpHelper.headerSelector || false
+    this.headerScrolledClass = ewpHelper.headerScrolledClass || false
+    this.addClassAfterScrollPos = ewpHelper.addClassAfterScrollPos || false
+    this.hideHeaderOnScroll = ewpHelper.hideHeaderOnScroll || false
+    this.hideHeaderAfter = ewpHelper.hideHeaderAfter || false
+    this.hideHeaderBreakpoint = ewpHelper.hideHeaderBreakpoint
+    this.enableFooter = ewpHelper.enableFooter || false
+    this.footerSelector = ewpHelper.footerSelector || false
     this.run()
   }
   run () {
